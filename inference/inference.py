@@ -57,7 +57,7 @@ class SMDetector:
 
         # check whether the sampling rate is matched
         if sr != 16000:
-            resample = torchaudio.transforms.Resample(sr, 16000)
+            resample = torchaudio.transforms.Resample(int(sr), 16000)
             audio = resample(audio)
 
         audio_pcen_data = self.pcen_transform(audio)
